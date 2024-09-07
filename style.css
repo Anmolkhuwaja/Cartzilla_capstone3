@@ -42,6 +42,38 @@ body{
     color: #2f4858;
     padding: 15px 0px;
 }
+/* Adjusted Width for Responsiveness */
+.wid {
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+.leftspace {
+  margin-left: 0;
+}
+.swiper {
+  width: 100%;
+  overflow: visible;
+}
+.swiper-slide {
+  padding: 10px;
+  margin: 0 !important;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.swiper-wrapper {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+.card1{
+  background-color: #FEEEF0;
+}
+.card2{
+  background-color: #EBF7F0;
+}
+.card3{
+  background-color: #EAF1FB;
+}
 .ancor {
     position: relative;
     text-decoration: none;
@@ -114,15 +146,12 @@ body{
 .underline:hover::after {
     width: 100%;
   }
-
 .font{
   font-size: 12px;
 }
-
 .second{
   margin-top: -35px;
 }
-/* Media Query */
 /* Media query for larger screens */
 @media (min-width: 1280px) {
     .header input {

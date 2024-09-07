@@ -32,13 +32,13 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   
   // Function to set the error message and add the red border
   function setValidationError(inputElement, message) {
-    inputElement.classList.add('is-invalid'); // Add Bootstrap invalid class for red border
-    inputElement.nextElementSibling.textContent = message; // Display the error message
-    inputElement.nextElementSibling.style.display = 'block'; // Make the error message visible
+    inputElement.classList.add('is-invalid');
+    inputElement.nextElementSibling.textContent = message;
+    inputElement.nextElementSibling.style.display = 'block';
   }
   
   // Function to clear the validation errors
   function clearValidation(inputElement) {
-    inputElement.classList.remove('is-invalid'); // Remove the red border
+    inputElement.classList.remove('is-invalid');//Remove the red border
     inputElement.nextElementSibling.style.display = 'none'; // Hide the error message
   }
