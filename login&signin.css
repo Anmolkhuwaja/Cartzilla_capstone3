@@ -43,3 +43,11 @@ body{
 .ancor:hover::after {
     width: 100%;
 }
+.is-invalid {
+    border-color: red;
+  }
+  
+  .invalid-tooltip {
+    display: none;
+    color: red;
+  }

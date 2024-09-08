@@ -128,6 +128,20 @@ body{
     color: #6e7072;
     font-size: 15px;
 }
+.cardtext{
+  color: #181d25;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.cardtext:hover{
+  text-decoration: underline;
+}
+.pic img{
+  height: 145px;
+  margin-left: 25px;
+  width: 70%;
+}
 .underline {
     display: inline-block;
     position: relative;
@@ -295,4 +309,7 @@ body{
 }
 .heading{
   margin-top: 140px;
+}
+.size{
+  font-size: 13px;
 }
