@@ -166,6 +166,12 @@ body{
 .second{
   margin-top: -35px;
 }
+.links-card{
+  height: 500px;
+}
+.listt{
+  height: 300px;
+}
 /* Media query for larger screens */
 @media (min-width: 1280px) {
     .header input {
@@ -312,4 +318,22 @@ body{
 }
 .size{
   font-size: 13px;
+}
+.line{
+  color: #535454;
+  font-weight: 400;
+}
+.line:hover{
+  text-decoration: underline;
+}
+.linkscard{
+  border-radius: 15px;
+  position: fixed;
+  top: 80px;
+  left: 13%; 
+  width: 60%; 
+  border: 1px solid #ddd;
+  padding: 10px;
+  z-index: 1000; 
+  display: none; 
 }

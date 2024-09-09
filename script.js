@@ -1,8 +1,11 @@
+//Get input on sm screen with Search icon
 const searchIcon = document.getElementById('searchIcon');
 const searchInput = document.getElementById('searchInput');
     searchIcon.addEventListener('click', function () {
         searchInput.classList.toggle('show');
 });
+
+
 
 // Cards Pagination
 document.addEventListener('DOMContentLoaded', function () {
@@ -25,13 +28,15 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
+
 //fetch data from API
 let productCard = document.querySelector(".product");
-
 let displayProduct = async () => {
   productCard.innerHTML = '';
   let product = await fetch('https://fakestoreapi.com/products');
   let finalProduct = await product.json();
+
+
 
   // Use slice to get the first 8 items
   finalProduct.slice(0, 8).forEach(element => {
@@ -55,5 +60,17 @@ let displayProduct = async () => {
       </div>`;
   });
 };
-
 displayProduct();
+
+
+
+// Toggle the Display of the Links Div
+function toggleLinks() {
+    const linksDiv = document.querySelector('.linkscard');
+    // Toggle the display property
+    if (linksDiv.style.display === 'none' || linksDiv.style.display === '') {
+        linksDiv.style.display = 'block'; // Show the div
+    } else {
+        linksDiv.style.display = 'none'; // Hide the div
+    }
+}
