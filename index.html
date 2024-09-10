@@ -60,8 +60,8 @@
         </button>
       </div>
 
-      <!-- Cart off canvas -->
 
+      <!-- Cart off canvas -->
       <div class="offcanvas offcanvas-end offcanvas-header flex-column align-items-start py-3 pt-lg-4 pb-sm-2 px-sm-2" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="width: 500px">
         <div class="d-flex align-items-center justify-content-between w-100 mb-3 mb-lg-4">
           <h4 class="offcanvas-title ps-4" id="shoppingCartLabel">Shopping cart</h4>
@@ -73,9 +73,11 @@
             Congratulations 🎉 You have added more than <span class="fw-semibold">$50</span> to your cart. <span class="fw-semibold">Delivery is free</span> for you!
           </div>
         </div>
+        <div class="off-canvas-cart-items"></div>
         </div>
       </div>
-
+      <!-- End -->
+       
       <div class="ms-5 pt-2 deliver">
         <h6 class="delivery">Delivery</h6>
         <div class="d-flex pt-1">
@@ -96,6 +98,8 @@
             </iconify-icon>
           </a>
         </div>
+
+        <!-- Cart icon -->
         <div class="ms-4 position-relative" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
           <iconify-icon icon="bx:cart" class="fs-2 samecolor pointer zoom-effect"></iconify-icon>
           <span id="cart-icon" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
@@ -479,7 +483,7 @@
 </section>
 
   <!-- Categories + Popular products -->
-  <section class="container pb-5 mb-2 mb-sm-3 mb-lg-4 mb-xl-5">
+<section class="container pb-5 mb-2 mb-sm-3 mb-lg-4 mb-xl-5">
     <div class="row">
 
       <!-- Categories list -->
@@ -616,7 +620,7 @@
   </section>
 
  <!-- Lifestyle categories that turns into carousel on screen < 992px (lg breackpoint) -->
- <section class="container pb-5 mb-2 mt-2 mb-sm-3 mb-lg-4 mb-xl-5">
+<section class="container pb-5 mb-2 mt-2 mb-sm-3 mb-lg-4 mb-xl-5">
   <h2 class="h3 text-center pb-1 pb-sm-2 pb-md-3 pb-lg-0 mb-4 mb-lg-5">Shop by lifestyle</h2>
   <div class="swiper pb-lg-2" data-swiper="{
     &quot;slidesPerView&quot;: 1,
@@ -697,10 +701,9 @@
   </div>
 </section>
 
-
-
-    <!-- Script File -->
+ <!-- Script File -->
     <script src="script.js"></script>
+    
     <!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 </body>
