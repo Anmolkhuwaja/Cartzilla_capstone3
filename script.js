@@ -17,9 +17,10 @@ function toggleLinks() {
 }
 
 
+
 // Selectors for the cart icon badge and cart container in the off-canvas
 const cartIcon = document.getElementById('cart-icon');
-const cartContainer = document.querySelector('.off-canvas-cart-items'); // Use this class in your off-canvas
+const cartContainer = document.querySelector('.off-canvas-cart-items');
 
 // Function to add item to local storage
 function addToCart(item) {
@@ -38,8 +39,7 @@ function renderCartItems() {
   cart.forEach((item, index) => {
     const cartItem = document.createElement('div');
     cartItem.className = 'card product-card h-100 border-0 shadow-none d-flex flex-column mb-3';
-    cartItem.innerHTML = `
-      <div class="position-relative z-2 flex-grow-1 d-flex align-items-center">
+    cartItem.innerHTML = `<div class="position-relative z-2 flex-grow-1 d-flex align-items-center">
         <a class="d-block flex-shrink-0" href="shop-product-grocery.html">
           <img src="${item.image}" alt="Image" class="img-fluid" style="max-height: 60px; object-fit: contain;">
         </a>
@@ -125,6 +125,8 @@ displayProduct();
 
 // Update cart count on page load
 updateCartCount();
+
+
 
 
 
