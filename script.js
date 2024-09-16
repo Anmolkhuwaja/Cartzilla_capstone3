@@ -1,11 +1,11 @@
 // Toggle the Display of the Links Div
 function toggleLinks() {
   const linksDiv = document.querySelector('.linkscard');
-  // Toggle the display property
+  
   if (linksDiv.style.display === 'none' || linksDiv.style.display === '') {
-      linksDiv.style.display = 'block'; // Show the div
+      linksDiv.style.display = 'block';
   } else {
-      linksDiv.style.display = 'none'; // Hide the div
+      linksDiv.style.display = 'none';
   }
 }
 
@@ -13,7 +13,7 @@ function toggleLinks() {
 // Selectors for the cart icon badge and cart container in the off-canvas 
 const cartIcon = document.getElementById('cart-icon');
 const cartContainer = document.querySelector('.off-canvas-cart-items');
-const subtotalElement = document.querySelector('.offcanvas-header .h6'); // Selector for the subtotal element
+const subtotalElement = document.querySelector('.offcanvas-header .h6');
 
 // Function to add item to local storage
 function addToCart(item) {
@@ -39,12 +39,12 @@ function addToCart(item) {
 // Function to render cart items from Local Storage to Off-Canvas
 function renderCartItems() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cartContainer.innerHTML = ''; // Clear previous items
+  cartContainer.innerHTML = '';
 
-  let subtotal = 0; // Initialize subtotal to 0
+  let subtotal = 0;
 
   cart.forEach((item, index) => {
-    subtotal += item.price * item.quantity; // Calculate subtotal
+    subtotal += item.price * item.quantity;
 
     const cartItem = document.createElement('div');
     cartItem.className = 'card product-card h-100 border-0 shadow-none d-flex flex-column mb-3';
@@ -81,11 +81,11 @@ function renderCartItems() {
 
     // Event listeners for plus and minus buttons
     cartItem.querySelector('.plus-item').addEventListener('click', () => {
-      changeItemQuantity(index, 1); // Increase quantity
+      changeItemQuantity(index, 1);
     });
 
     cartItem.querySelector('.minus-item').addEventListener('click', () => {
-      changeItemQuantity(index, -1); // Decrease quantity
+      changeItemQuantity(index, -1);
     });
   });
 
@@ -108,7 +108,7 @@ function updateCartCount() {
 // Function to remove item from the cart
 function removeCartItem(index) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.splice(index, 1); // Remove item at the specified index
+  cart.splice(index, 1); 
   localStorage.setItem('cart', JSON.stringify(cart));
   updateCartCount();
   renderCartItems();
@@ -119,12 +119,12 @@ function changeItemQuantity(index, delta) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   
   if (cart[index].quantity + delta > 0) {
-    cart[index].quantity += delta; // Update quantity based on delta (+1 or -1)
+    cart[index].quantity += delta;
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
     renderCartItems();
   } else {
-    // If the quantity goes to 0 or below, remove the item
+    
     removeCartItem(index);
   }
 }
@@ -165,7 +165,7 @@ let displayProduct = async () => {
         image: element.image,
         title: element.title,
         price: element.price,
-        quantity: 1 // Start with quantity 1 for each new addition
+        quantity: 1
       });
     });
   });

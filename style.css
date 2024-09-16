@@ -102,11 +102,11 @@ body{
   height: 145px;
   margin-left: 25px;
   width: 70%;}
-.underline {
+.Line {
     display: inline-block;
     position: relative;
     cursor: pointer;}
-.underline::after {
+.Line::after {
     content: "";
     position: absolute;
     left: 0;
@@ -115,7 +115,7 @@ body{
     height: 1px;
     background-color: #000;
     transition: width 0.3s ease;}
-.underline:hover::after {
+.Line:hover::after {
     width: 100%;}
   .underline1 {
     display: inline-block;
