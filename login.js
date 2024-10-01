@@ -39,6 +39,6 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
   
   // Function to clear the validation errors
   function clearValidation(inputElement) {
-    inputElement.classList.remove('is-invalid');//Remove the red border
-    inputElement.nextElementSibling.style.display = 'none'; // Hide the error message
+    inputElement.classList.remove('is-invalid');
+    inputElement.nextElementSibling.style.display = 'none';
   }

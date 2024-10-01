@@ -1,32 +1,29 @@
 // Toggle the Display of the Links Div
 function toggleLinks() {
   const linksDiv = document.querySelector('.linkscard');
-  
   if (linksDiv.style.display === 'none' || linksDiv.style.display === '') {
       linksDiv.style.display = 'block';
   } else {
       linksDiv.style.display = 'none';
   }
 }
-
-
-// Selectors for the cart icon badge and cart container in the off-canvas 
+ 
 const cartIcon = document.getElementById('cart-icon');
 const cartContainer = document.querySelector('.off-canvas-cart-items');
 const subtotalElement = document.querySelector('.offcanvas-header .h6');
 
-// Function to add item to local storage
+// Add item to local storage
 function addToCart(item) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  // Check if item already exists in the cart
+// Check item in cart
   const existingItemIndex = cart.findIndex(cartItem => cartItem.title === item.title);
 
   if (existingItemIndex !== -1) {
-    // If item exists, increase its quantity
+    
     cart[existingItemIndex].quantity += 1;
   } else {
-    // If item does not exist, add it as a new item with quantity 1
+    //add it as a new item with quantity 1
     item.quantity = 1;
     cart.push(item);
   }
@@ -36,13 +33,13 @@ function addToCart(item) {
   renderCartItems();
 }
 
-// Function to render cart items from Local Storage to Off-Canvas
+
+
+// Cart items from Local Storage to Off-Canvas
 function renderCartItems() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   cartContainer.innerHTML = '';
-
   let subtotal = 0;
-
   cart.forEach((item, index) => {
     subtotal += item.price * item.quantity;
 
@@ -71,15 +68,15 @@ function renderCartItems() {
       </div>
     `;
 
-    // Append the item to the cart container in the off-canvas
+    // Append the item to the cart in the off-canvas
     cartContainer.appendChild(cartItem);
 
-    // Event listener to remove item from the cart
+    // Remove item from the cart
     cartItem.querySelector('.remove-item').addEventListener('click', () => {
       removeCartItem(index);
     });
 
-    // Event listeners for plus and minus buttons
+    // Plus and minus buttons
     cartItem.querySelector('.plus-item').addEventListener('click', () => {
       changeItemQuantity(index, 1);
     });
@@ -89,11 +86,11 @@ function renderCartItems() {
     });
   });
 
-  // Update the subtotal display
-  subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+  // Subtotal display
+  subtotalElement.textContent = `${subtotal.toFixed(2)}`;
 }
 
-// Function to update the cart item count on the cart icon
+// Update the cart item count the cart icon
 function updateCartCount() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   let itemCount = 0;
@@ -105,7 +102,7 @@ function updateCartCount() {
   cartIcon.textContent = itemCount;
 }
 
-// Function to remove item from the cart
+// Remove item from the cart
 function removeCartItem(index) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   cart.splice(index, 1); 
@@ -114,7 +111,7 @@ function removeCartItem(index) {
   renderCartItems();
 }
 
-// Function to change item quantity
+// Change item quantity
 function changeItemQuantity(index, delta) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   
@@ -129,7 +126,7 @@ function changeItemQuantity(index, delta) {
   }
 }
 
-// Fetch products and display them
+// Fetch products from API in html
 let productCard = document.querySelector(".product");
 let displayProduct = async () => {
   productCard.innerHTML = '';
@@ -159,7 +156,7 @@ let displayProduct = async () => {
 
     productCard.appendChild(productElement);
 
-    // Event listener for Add to Cart button
+    // Add to Cart button
     productElement.querySelector('.add-to-cart').addEventListener('click', () => {
       addToCart({
         image: element.image,
