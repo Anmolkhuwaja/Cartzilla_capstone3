@@ -26,6 +26,6 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
         localStorage.setItem('Password', userPassword.value);
 
         alert("Registration is completed!");
-        window.location.href = "/Cartzilla_capstone3/login.html"; 
+        window.location.href = "../Cartzilla_capstone3/login.html"; 
     }
 });
