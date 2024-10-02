@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     // Check if the input values match the stored values
     if (userEmailValue === localEmail && userPasswordValue === localPassword) {
       alert("Login successfully!");
-      window.location.href = "./index.html";
+      window.location.href = "/Cartzilla_capstone3/index.html";
     } else {
       // Show error messages and add red border if the input values are incorrect
       if (userEmailValue !== localEmail) {
